@@ -1,0 +1,9 @@
+:root {
+    /* declare a variable with `--` syntax */
+    --dark: #000000;
+    --neon: #00ff04;
+    --dark2: #060a3d;
+    --medium: #002754;
+    --light:#3f0090;
+    --lightMain: #001994;
+  }
