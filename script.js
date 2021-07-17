@@ -5,7 +5,7 @@
 // Info page will feature game title, release date, genre, description, platform, 
 
 // We can use the price API as a back up option. 
-// other options could be a seperate game database
+// other options could be a separate game database
 
 
 $.ajax({
