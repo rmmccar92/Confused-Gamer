@@ -6,3 +6,18 @@
 
 // We can use the price API as a back up option. 
 // other options could be a seperate game database
+
+
+$.ajax({
+    type: 'GET',
+    dataType: 'jsonp',
+    crossDomain: true,
+    jsonp: 'json_callback',
+    url: 'https://www.giantbomb.com/api/games/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp',
+  
+  
+  })
+  
+  .then(function(data) {
+      console.log(data);
+      })
