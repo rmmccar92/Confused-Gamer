@@ -7,3 +7,27 @@
     --light:#3f0090;
     --lightMain: #001994;
   }
+
+  .card-holder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 350px;
+    margin-bottom: 350px;
+
+}
+
+.example{
+    border: 3px solid black;
+}
+
+.card{
+    background-color: #0a9cf5;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    border: 1px gray solid;
+    border-radius: 5px;
+    padding-bottom: 15px;
+   
+}
