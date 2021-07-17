@@ -8,7 +8,16 @@
     --lightMain: #001994;
   }
 
-  .card-holder{
+  body{
+    background-color: #003062
+}
+
+.wrapper{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.card-holder{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,3 +40,95 @@
     padding-bottom: 15px;
    
 }
+
+.platforms{
+    color: #ffff;
+    padding-bottom: 10px;
+    text-decoration: underline;
+}
+
+#submitBtn{
+    font-size: 15px;
+    font-weight: 400;
+    color: #1D7874;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background: #fff;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+
+.pc {
+    /* border: 1px solid black; */
+    margin-bottom: 20px;
+}
+
+.pcBtn{
+    font-size: 15px;
+    font-weight: 400;
+    color: #1D7874;
+    padding: 7px 11px;
+    border-radius: 10px;
+    background: #fff;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.playBtn{
+    font-size: 15px;
+    font-weight: 400;
+    color: #1D7874;
+    padding: 7px 11px;
+    border-radius: 10px;
+    background: #fff;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.boxBtn{
+    font-size: 15px;
+    font-weight: 400;
+    color: #1D7874;
+    padding: 7px 11px;
+    border-radius: 10px;
+    background: #fff;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.ninBtn{
+    font-size: 15px;
+    font-weight: 400;
+    color: #1D7874;
+    padding: 7px 11px;
+    border-radius: 10px;
+    background: #fff;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.ps {
+    /* border: 1px solid black; */
+    margin-bottom: 20px;
+}
+
+.xb {
+   
+    margin-bottom: 20px;
+}
+
+.nin {
+
+}
+
