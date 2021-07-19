@@ -6,18 +6,26 @@
 
 // We can use the price API as a back up option. 
 // other options could be a separate game database
-
+var submitButton = $("#submitBtn");
+var inputEl = $('.input');
+var userInput;
 
 $.ajax({
-    type: 'GET',
-    dataType: 'jsonp',
-    crossDomain: true,
-    jsonp: 'json_callback',
-    url: 'https://www.giantbomb.com/api/games/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp',
-  
-  
+  type: 'GET',
+  dataType: 'jsonp',
+  crossDomain: true,
+  jsonp: 'json_callback',
+  url: 'https://www.giantbomb.com/api/games/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp',
+
+
+})
+
+  .then(function (data) {
+    console.log(data);
   })
-  
-  .then(function(data) {
-      console.log(data);
-      })
+submitButton.on("click", function () {
+  event.preventDefault();
+  userInput = inputEl.val();
+  console.log(userInput)
+  return userInput
+})
