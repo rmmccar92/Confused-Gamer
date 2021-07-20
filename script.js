@@ -10,6 +10,9 @@ var submitButton = $("#submitBtn");
 var inputEl = $('.input');
 var userInput;
 
+var top10listEl =$('#top-10-list');
+var platformButtonsEl= $('#platform-buttons');
+
 $.ajax({
   type: 'GET',
   dataType: 'jsonp',
@@ -45,3 +48,20 @@ $.ajax({
 .then(function(data){
   console.log(data);
 });
+
+
+
+var buttonClickHandler = function (event) {
+  var platform = event.target.getattribute('data-platformID');
+
+  if(platform) {
+    getFeaturedPlatforms(platform);
+
+    top10listEl.textContent = '';
+  }
+};
+
+
+var getFeaturedPlatforms = function (platform){
+  varapi
+}
