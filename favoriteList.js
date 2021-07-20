@@ -8,6 +8,7 @@ var Button7 = $(".game-7-button");
 var Button8 = $(".game-8-button");
 var Button9 = $(".game-9-button");
 var Button10 = $(".game-10-button");
+var Button11 = $(".game-11-button");
 
 var game1El = $(".game-1");
 var game2El = $(".game-2");
@@ -19,6 +20,7 @@ var game7El = $(".game-7");
 var game8El = $(".game-8");
 var game9El = $(".game-9");
 var game10El = $(".game-10");
+var game11El =$(".game-11")
 
 var listCount=0
 
@@ -105,6 +107,15 @@ Button10.on("click" , function () {
     var listItem = $(".saved-list").addClass("saved-games");
     listCount++
     listItem.append("<li>" + game10El.text() + "</li>");
+    localStorage.setItem("count" , listCount);
+})
+
+Button11.on("click" , function () {
+    console.log(game11El.text());
+    localStorage.setItem(listCount , game11El.text());
+    var listItem = $(".saved-list").addClass("saved-games");
+    listCount++
+    listItem.append("<li>" + game11El.text() + "</li>");
     localStorage.setItem("count" , listCount);
 })
 
