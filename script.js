@@ -30,4 +30,22 @@ submitButton.on("click", function () {
   return userInput
 })
 
+<<<<<<< HEAD
 console.log(userInput)
+=======
+var platformID = 146;
+var buttonSelection =  'https://www.giantbomb.com/api/games/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp&platforms=' + platformID;
+
+
+$.ajax({
+  type: 'GET',
+  dataType: 'jsonp',
+  crossDomain: true,
+  jsonp: 'json_callback',
+  url: buttonSelection
+})
+
+.then(function(data){
+  console.log(data);
+});
+>>>>>>> b9e92164bf23004c33104454c231674477bb8d7a
