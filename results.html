@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://use.fontawesome.com/24eeb2b29c.js"></script>
     <link rel="stylesheet" href="assets/style.css">
 
@@ -12,41 +13,132 @@
 </head>
 
 <body>
-    <div class="container center">
-        <div class="container-fluid center">
-            <div class="row">
-                <div class="col s8">
-                    <div class="card blue-grey darken-1">
-                        <div class="card-content white-text">
-                            <span class="card-title ">Here are your top 10 results!</span>
-                        </div>
-                        <div class="collection">
-                            <a href="#!" class="collection-item blue darken-1 white-text">Game 1</a>
-                            <a href="#!" class="collection-item purple darken-3 white-text">Game 2</a>
-                            <a href="#!" class="collection-item blue darken-1 white-text">Game 3</a>
-                            <a href="#!" class="collection-item purple darken-3 white-text">Game 4</a>
-                            <a href="#!" class="collection-item blue darken-1 white-text">Game 5</a>
-                            <a href="#!" class="collection-item purple darken-3 white-text">Game 6</a>
-                            <a href="#!" class="collection-item blue darken-1 white-text">Game 7</a>
-                            <a href="#!" class="collection-item purple darken-3 white-text">Game 8</a>
-                            <a href="#!" class="collection-item blue darken-1 white-text">Game 9</a>
-                            <a href="#!" class="collection-item purple darken-3 white-text">Game 10</a>
-                        </div>
+    <nav>
+        <div id="navbarResults" class="nav-wrapper">
+            <a href="#" class="brand-logo center">Project Title</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a class="navLinks" href="index.html">Home</a></li>
+                <li><a class="navLinks" href="badges.html">About</a></li>
 
-                           
-                        
-                    </div>
+            </ul>
+        </div>
+    </nav>
+    <!-- <div class="container center"> -->
+    <div id="page2wrapper" class="container-fluid">
+        <div class="row">
+            <!-- right box/top 10 -->
+            <div id="top10" class="col s2 card center">
+                <div class="card-content white-text">
+                    <span class="card-title ">Here are your top 10 results!</span>
                 </div>
-                <div class="col s5">
-                    <div class="card blue-grey darken-1">
-                        <div class="card-content white-text">
-                            <span class="card-title">Your saved favorites:</span>
-                        </div>
-
+                <div class="collection">
+                    <div class="collection-item purple darken-3 row4">
+                        <a href="#!" class="white-text game-1">Game 1</a>
+                        <a class="btn-floating btn-small waves-effect waves-light deep-purple accent-3 game-1-button"><i
+                                class="material-icons">add</i></a>
+                    </div>
+                    <div class="collection-item black darken-1 row 4">
+                        <a href="#!" class="white-text game-2">Game 2</a>
+                        <a class="btn-floating btn-small waves-effect waves-light deep-purple accent-3 game-2-button"><i
+                                class="material-icons">add</i></a>
+                    </div>
+                    <div class="collection-item purple darken-3 row 4">
+                        <a href="#!" class="white-text game-3">Game 3</a>
+                        <a class="btn-floating btn-small waves-effect waves-light deep-purple accent-3 game-3-button"><i
+                                class="material-icons">add</i></a>
+                    </div>
+                    <div class="collection-item black darken-1 row 4">
+                        <a href="#!" class="white-text game-4">Game 4</a>
+                        <a class="btn-floating btn-small waves-effect waves-light deep-purple accent-3 game-4-button"><i
+                                class="material-icons">add</i></a>
+                    </div>
+                    <div class="collection-item purple darken-3 row 4">
+                        <a href="#!" class="white-text game-5">Game 5</a>
+                        <a class="btn-floating btn-small waves-effect waves-light deep-purple accent-3 game-5-button"><i
+                                class="material-icons">add</i></a>
+                    </div>
+                    <div class="collection-item black darken-1 row 4">
+                        <a href="#!" class="white-text game-6">Game 6</a>
+                        <a class="btn-floating btn-small waves-effect waves-light deep-purple accent-3 game-6-button"><i
+                                class="material-icons">add</i></a>
+                    </div>
+                    <div class="collection-item purple darken-3 row 4">
+                        <a href="#!" class="white-text game-7">Game 7</a>
+                        <a class="btn-floating btn-small waves-effect waves-light deep-purple accent-3 game-7-button"><i
+                                class="material-icons">add</i></a>
+                    </div>
+                    <div class="collection-item black darken-1 row 4">
+                        <a href="#!" class="white-text game-8">Game 8</a>
+                        <a class="btn-floating btn-small waves-effect waves-light deep-purple accent-3 game-8-button"><i
+                                class="material-icons">add</i></a>
+                    </div>
+                    <div class="collection-item purple darken-3 row 4">
+                        <a href="#!" class="white-text game-9">Game 9</a>
+                        <a class="btn-floating btn-small waves-effect waves-light deep-purple accent-3 game-9-button"><i
+                                class="material-icons">add</i></a>
+                    </div>
+                    <div class="collection-item black darken-1 row 4">
+                        <a href="#!" class="white-text game-10">Game 10</a>
+                        <a class="btn-floating btn-small waves-effect waves-light deep-purple accent-3 game-10-button"><i
+                                class="material-icons">add</i></a>
                     </div>
                 </div>
             </div>
-    
+            <!-- middle box/game content -->
+            <div class="col s1 center"></div>
+
+            <div id="gameInfoContainer" class="col s6 card center">
+                <div class="card-content white-text">
+                    <span id="gameDetail" class="card-title">Game Details</span>
+                </div>
+                <div id="gameDetailBox">
+                    <div class="gameInfoTitle">Game Title</div>
+                    <div class="gameInfoDesc">
+                        <p>GAME DESCRIPTION FILLER Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis,
+                            itaque cupiditate nostrum tempore nulla unde ipsa inventore. Quos quibusdam exercitationem
+                            similique hic? Harum accusantium cum facilis accusamus. Veniam, eius corrupti!
+                        </p>
+                    </div>
+                    <div id="subAndPhoto">
+                        <div id="subInfoBox">
+                            <div class="gameInfoGenre">Genre</div>
+                            <div class="gameInfoRating">Rating</div>
+                            <div class="gameInfoReview">Review</div>
+                        </div>
+                        <div id="photoBox">
+                            <div class="gameInfoPhoto">Photo</div>
+                        </div>
+                    </div>
+                    <div class="gameInfoVideos">Related Videos</div>
+                </div>
+            </div>
+            <div class="col s1 center"></div>
+            <!-- right box/favorited games -->
+            <div id="savedFavorites" class="col s2 card center">
+                <div class="card-content white-text">
+                    <span class="card-title">Your saved favorites:</span>
+                </div>
+                <div class="collection saved-list">
+                    <a href="#!" class="collection-item black darken-1 white-text">Favorite 1</a>
+                    <a href="#!" class="collection-item purple darken-3 white-text">Favorite 2</a>
+                    <a href="#!" class="collection-item black darken-1 white-text">Favorite 3</a>
+                    <a href="#!" class="collection-item purple darken-3 white-text">Favorite 4</a>
+                    <a href="#!" class="collection-item black darken-1 white-text">Favorite 5</a>
+                    <a href="#!" class="collection-item purple darken-3 white-text">Favorite 6</a>
+                    <a href="#!" class="collection-item black darken-1 white-text">Favorite 7</a>
+                    <a href="#!" class="collection-item purple darken-3 white-text">Favorite 8</a>
+                    <a href="#!" class="collection-item black darken-1 white-text">Favorite 9</a>
+                    <a href="#!" class="collection-item purple darken-3 white-text">Favorite 10</a>
+                </div>
+            </div>
+
         </div>
     </div>
+
+    </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="favoriteList.js"></script>
+    <script src="script.js"></script>
 </body>
