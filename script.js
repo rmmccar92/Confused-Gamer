@@ -65,3 +65,5 @@ var buttonClickHandler = function (event) {
 var getFeaturedPlatforms = function (platform){
   varapi
 }
+// FAVORITE BUTTON
+
