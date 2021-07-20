@@ -9,11 +9,26 @@
   }
 
   body{
-    background-color: #003062
+    background-color: var(--lightMain)
 }
 
+.nav-wrapper {
+    background-color: var(--light)
+}
+.navLinks {
+    font-size: 20px;
+    color: var(--neon)
+}
+
+#welcomeMessage{
+    width: 60%;
+    margin: auto;
+    margin-top: 4em;
+    color: #ffff;
+    font-size: 20px;
+}
 .wrapper{
-    margin-left: 20px;
+    margin-left: 5px;
     margin-right: 20px;
 }
 
@@ -21,9 +36,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 350px;
+    margin-top: 100px;
     margin-bottom: 350px;
-
 }
 
 .example{
@@ -31,14 +45,13 @@
 }
 
 .card{
-    background-color: #0a9cf5;
+    background-color: var(--light);
     width: 30%;
     display: flex;
     flex-direction: column;
     border: 1px gray solid;
     border-radius: 5px;
-    padding-bottom: 15px;
-   
+    padding-bottom: 15px; 
 }
 
 .platforms{
@@ -59,7 +72,6 @@
     outline: none;
     cursor: pointer;
 }
-
 
 .pc {
     border: 1px solid black;
@@ -132,6 +144,102 @@
 
 }
 
+<<<<<<< HEAD
 
     
     
+=======
+/* CSS FOR SECOND SHEET */
+
+#page2wrapper {
+    margin-top: 2em;
+}
+
+#top10 {
+    background-color: var(--medium);
+    border: solid;
+    border-color: var(--neon);
+}
+#gameInfoContainer {
+    color:white;
+    border: solid;
+    border-color: var(--neon);
+    background: var(--light);
+}
+
+#gameDetailBox {
+    display: flex;
+    flex-direction: column;
+    
+    /* border: solid; */
+    /* border-color: aqua; */
+}
+
+.gameInfoTitle {
+    border: solid;
+    width: 100%;
+}
+
+.gameInfoDesc {
+    border: solid;
+    margin-top: 1em;
+    width: 100%;
+}
+
+#subAndPhoto {
+    display: flex;
+    flex-direction: row;
+    /* border: solid; */
+    
+}
+#subInfoBox{
+    display: flex;
+    flex-direction: column;
+    /* border: solid; */
+    margin-top: 1em;
+    width: 50%;
+}
+.gameInfoGenre {
+    border: solid;
+    margin: 1em;
+    width: 90%;
+}
+
+.gameInfoRating {
+    border: solid;
+    margin: 1em;
+    width: 90%;
+}
+
+.gameInfoReview {
+    border: solid;
+    margin: 1em;
+    width: 90%;
+}
+
+.gameInfoPhoto {
+    border: solid;
+    margin: 1em;
+    width: 50%
+}
+
+#photoBox{
+    display: flex;
+    justify-content: center;
+    /* border: solid; */
+    margin-top: 1em;
+    width: 50%; 
+}
+
+.gameInfoVideos {
+    border: solid;
+    margin: 1em;
+    height: 12em;
+}
+
+#savedFavorites{
+    background: var(--medium);
+    border: solid;
+    border-color: var(--neon);
+}
+>>>>>>> 9010062f1649fc211134703a1b77a8dd804a14b9
