@@ -1,65 +1,76 @@
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
     <script src="https://use.fontawesome.com/24eeb2b29c.js"></script>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/style.css" />
 
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav>
-
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo center">Project Title</a>
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="sass.html">Sass</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">JavaScript</a></li>
-            </ul>
-        </div>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo center">Project Title</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a class="navLinks" href="index.html">Home</a></li>
+          <li><a class="navLinks" href="results.html">Results</a></li>
+          <!-- <li><a class="navLinks" href="collapsible.html">JavaScript</a></li> -->
+        </ul>
+      </div>
     </nav>
-
+    <div id="welcomeMessage">
+      <p>
+        WELCOME MESSAGE Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Aliquam, recusandae nam dolores debitis autem odit beatae amet tempore,
+        dolor a, quis doloremque adipisci quasi ut pariatur fugiat magni?
+        Doloribus, voluptate!
+      </p>
+    </div>
 
     <div class="card-holder">
-        <div class="card center">
-            <div class="wrapper">
-                <input type="text" class="input" placeholder="Search for a game...">
-            </div>
-            <div class="searchbtn">
-                <form class="submit">
-                    <input type="submit" id="submitBtn" value="Submit">
-                </form>
-            </div>
-
-            <div class="platforms">
-                <h5>Search by platform</h5>
-            </div>
-
-            <div class="pc">
-                <button class="pcBtn">PC</button>
-            </div>
-
-            <div class="ps">
-                <button class="playBtn">Playstation</button>
-            </div>
-
-            <div class="xb">
-                <button class="boxBtn">Xbox</button>
-            </div>
-
-            <div class="nin">
-                <button class="ninBtn">Nintendo</button>
-            </div>
-
-
+      <div class="card center">
+        <div class="wrapper">
+          <input
+            type="text"
+            class="input"
+            placeholder="Game Search - Coming Soon!"
+          />
         </div>
+        <div class="searchbtn">
+          <form class="submit">
+            <input type="submit" id="submitBtn" value="Submit" />
+          </form>
+        </div>
+
+        <div class="platforms">
+          <h5>Search by platform</h5>
+        </div>
+
+        <div class="pc">
+          <button class="pcBtn">PC</button>
+        </div>
+
+        <div class="ps">
+          <button class="playBtn">Playstation</button>
+        </div>
+
+        <div class="xb">
+          <button class="boxBtn">Xbox</button>
+        </div>
+
+        <div class="nin">
+          <button class="ninBtn">Nintendo</button>
+        </div>
+      </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src=script.js></script>
-</body>
+    <script src="script.js"></script>
+  </body>
+</html>
