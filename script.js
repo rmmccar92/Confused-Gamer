@@ -9,6 +9,7 @@
 var submitButton = $("#submitBtn");
 var inputEl = $('.input');
 var userInput;
+var game1El = $("")
 
 $.ajax({
   type: 'GET',
@@ -45,3 +46,7 @@ $.ajax({
 .then(function(data){
   console.log(data);
 });
+
+
+// FAVORITE BUTTON
+
