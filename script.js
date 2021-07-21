@@ -69,6 +69,8 @@ var buttonClickHandler = function (event) {
 
     top10listEl.textContent = '';
   }
+
+  
 };
 
 
