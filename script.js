@@ -46,6 +46,39 @@ $.ajax({
   console.log(data);
 });
 
+// DOM VARIABLES
+var game1El = $(".game-1");
+var game2El = $(".game-2");
+var game3El = $(".game-3");
+var game4El = $(".game-4");
+var game5El = $(".game-5");
+var game6El = $(".game-6");
+var game7El = $(".game-7");
+var game8El = $(".game-8");
+var game9El = $(".game-9");
+var game10El = $(".game-10");
 
-// FAVORITE BUTTON
+var titleEl = $(".gameInfoTitle");
+var descEl = $(".gameInfoDesc");
+var genreEl = $(".gameInfoGenre");
+var ratingEl = $(".gameInfoRating");
+var photoEl = $(".gameInfoPhoto");
+var revEl = $(".gameInfoReview");
+var videoEl = $(".gameInfoVideos");
+// TITLE
+game1El.on("click" , function() {
+  titleEl.empty();
+  titleEl.append(game1El.text());
+})
+// DESCRIPTION
+
+// GENRE
+
+// RATING
+
+// PHOTO
+
+// REVIEW
+
+// VIDEO/MEDIA
 
