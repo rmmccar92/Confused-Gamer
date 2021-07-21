@@ -29,6 +29,7 @@ function pageLoad() {
     if (localStorage.getItem("count") != null) {
         listCount = localStorage.getItem("count")
     }
+    console.log(JSON.parse(localStorage.getItem('data')))
 }
 
 
