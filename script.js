@@ -62,6 +62,8 @@ console.log(platformID);
 
     top10listEl.textContent = '';
   }
+
+  
 };
 
 

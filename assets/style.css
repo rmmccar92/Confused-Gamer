@@ -57,7 +57,7 @@
 .platforms{
     color: var(--text1);
     padding-bottom: 10px;
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 
 #submitBtn{
@@ -176,12 +176,13 @@
 }
 
 .gameInfoTitle {
-    border: solid;
+    /* border: solid; */
+    font-size: 20px;
     width: 100%;
 }
 
 .gameInfoDesc {
-    border: solid;
+    /* border: solid; */
     margin-top: 1em;
     width: 100%;
 }
@@ -200,25 +201,28 @@
     width: 50%;
 }
 .gameInfoGenre {
-    border: solid;
+    /* border: solid; */
+    text-align: left;
     margin: 1em;
     width: 90%;
 }
 
 .gameInfoRating {
-    border: solid;
+    /* border: solid; */
+    text-align: left;
     margin: 1em;
     width: 90%;
 }
 
 .gameInfoReview {
-    border: solid;
+    /* border: solid; */
+    text-align: left;
     margin: 1em;
     width: 90%;
 }
 
 .gameInfoPhoto {
-    border: solid;
+    /* border: solid; */
     margin: 1em;
     width: 50%
 }
@@ -232,13 +236,13 @@
 }
 
 .gameInfoVideos {
-    border: solid;
+    /* border: solid; */
     margin: 1em;
     height: 12em;
 }
 
 #savedFavorites{
-    background: var(--light;
+    background: var(--light);
     border: solid;
     border-color: var(--border);
 }
