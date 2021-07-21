@@ -20,6 +20,8 @@
         <a href="#" class="brand-logo center">Project Title</a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
           <li><a class="navLinks" href="index.html">Home</a></li>
+        </ul>
+        <ul id="nav-mobile" class="right hid-on-med-and-down">
           <li><a class="navLinks" href="results.html">Results</a></li>
           <!-- <li><a class="navLinks" href="collapsible.html">JavaScript</a></li> -->
         </ul>
@@ -52,10 +54,18 @@
              <div class="platforms card center">
                <h5>Search by platform</h5>
                   <div id="platform-buttons">
-                    <button data-platform="94,17" class="btn" >PC</button><br><br>
-                    <button data-platform="176,146" class="btn">Playstation</button><br><br>
-                    <button data-platform="179,145" class="btn">Xbox</button><br><br>
-                    <button data-platform="157,139,117" class="btn">Nintendo</button><br><br>
+                    <div data-platformID="94,17">                   
+                      <button class="btn" >PC</button><br><br>
+                    </div>  
+                    <div data-mplatforID="176,146">
+                      <button class="btn">Playstation</button><br><br>
+                    </div>
+                    <div data-platformID="179,145">
+                      <button  class="btn">Xbox</button><br><br>
+                    </div>
+                    <div data-platformID="157,139,117">
+                      <button class="btn">Nintendo</button><br><br>
+                    </div>
                   </div>
              </div>
         </div>
