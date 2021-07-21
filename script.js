@@ -10,8 +10,8 @@ var submitButton = $("#submitBtn");
 var inputEl = $('.input');
 var userInput;
 
-var top10listEl =$('#top-10-list');
-var platformButtonsEl= $('#platform-buttons');
+var top10listEl = $('#top-10-list');
+var platformButtonsEl = $('#platform-buttons');
 
 // $.ajax({
 //   type: 'GET',
@@ -27,26 +27,33 @@ var platformButtonsEl= $('#platform-buttons');
 //     console.log(data);
 //   })
 
-
+var playBTN = $(".PS")
+console.log(playBTN.attr("data-platformID"))
 
 $(".btn").on("click", checkPlatformID);
 
-function checkPlatformID(event){
-   event.preventDefault();
-   
-   var platformID = $(this).parent().data("platformID");
-   console.log(this);
-   var platformApiUrl =  'https://www.giantbomb.com/api/games/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp&platforms=' + platformID + '&limit=10';
+function checkPlatformID(event) {
+  event.preventDefault();
 
-   console.log(platformID);
+  var platformID = $(this).attr("data-platformID");
+  console.log(this);
+  var platformApiUrl = 'https://www.giantbomb.com/api/games/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp&platforms=' + platformID + '&limit=10';
 
-   $.ajax({
+  console.log(platformID);
+
+  $.ajax({
     type: 'GET',
     dataType: 'jsonp',
     crossDomain: true,
     jsonp: 'json_callback',
     url: platformApiUrl
-  });
+  })
+    .then(function (data) {
+      localStorage.setItem('data', JSON.stringify(data));
+    })
+    .then(function () {
+      location.assign("results.html")
+    });
 }
 
 
@@ -56,8 +63,8 @@ function checkPlatformID(event){
 
 var buttonClickHandler = function (event) {
   var platformID = event.target.getattribute('data-platformID');
-console.log(platformID);
-  if(platformID) {
+  console.log(platformID);
+  if (platformID) {
     getFeaturedPlatforms(platform);
 
     top10listEl.textContent = '';
@@ -75,7 +82,7 @@ console.log(platformID);
 //     jsonp: 'json_callback',
 //     url: platformApiUrl
 //   })
-  
+
 //   .then(function(data){
 //     console.log(data);
 //   });    
