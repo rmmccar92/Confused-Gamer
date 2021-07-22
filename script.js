@@ -27,8 +27,10 @@ var platformButtonsEl = $('#platform-buttons');
 //     console.log(data);
 //   })
 
-var playBTN = $(".PS")
-console.log(playBTN.attr("data-platformID"))
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+}); //supposed to initialize hamburger menu when screen is minimized or on mobile
+
 
 $(".btn").on("click", checkPlatformID);
 
@@ -55,7 +57,6 @@ function checkPlatformID(event) {
       location.assign("results.html")
     });
 }
-
 
 
 
