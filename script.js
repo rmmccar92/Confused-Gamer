@@ -32,13 +32,13 @@ $(document).ready(function(){
   $('.slider').slider();
 });
 
-const slider = document.querySelector('.slider');
-M.slider.init(slider, {
-  indicators: false,
-  height: 500,
-  transition: 500,
-  interval: 5000
-})
+// const slider = document.querySelector('.slider');
+// M.slider.init(slider, {
+//   indicators: false,
+//   height: 500,
+//   transition: 500,
+//   interval: 5000
+// })
 
 $(".btn").on("click", checkPlatformID);
 
@@ -47,7 +47,7 @@ function checkPlatformID(event) {
 
   var platformID = $(this).attr("data-platformID");
   console.log(this);
-  var platformApiUrl = 'https://www.giantbomb.com/api/games/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp&sort=number_of_user_reviews:asc&platforms=' + platformID + '&limit=10';
+  var platformApiUrl = 'https://www.giantbomb.com/api/games/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp&sort=number_of_user_reviews:desc&platforms=' + platformID + '&limit=10';
 
   console.log(platformID);
 
@@ -79,9 +79,13 @@ function checkPlatformID(event) {
 //     top10listEl.textContent = '';
 //   }
 
-  
-// };
-
+printTopTen()
+function printTopTen() {
+  for (i=0; i<= data.length; i++){
+  var gameListItem = $(data.name[i])
+    console.log(gameListItem)
+}
+}
 
 // var getFeaturedPlatforms = function (platform){
 //   var platformApiUrl =  'https://www.giantbomb.com/api/games/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp&platforms=' + platformID + '&limit=10';
@@ -94,12 +98,21 @@ function checkPlatformID(event) {
 //     url: platformApiUrl
 //   })
 
+
+
+
+
+
+
+
+// FAVORITE BUTTON
 //   .then(function(data){
 //     console.log(data);
 //   });    
 // }
 // var getFeaturedRepos = function (language) {
 //   var apiUrl = 'https://api.github.com/search/repositories?q=' + language + '+is:featured&sort=help-wanted-issues';
+
 
 //   fetch(apiUrl).then(function (response) {
 //     if (response.ok) {
