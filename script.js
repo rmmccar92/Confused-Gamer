@@ -29,6 +29,7 @@ var platformButtonsEl = $('#platform-buttons');
 
 $(document).ready(function(){
   $('.sidenav').sidenav();
+  $('.slider').slider();
 });
 
 // $(document).ready(function(){
