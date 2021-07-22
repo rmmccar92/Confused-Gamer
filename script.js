@@ -10,41 +10,86 @@ var submitButton = $("#submitBtn");
 var inputEl = $('.input');
 var userInput;
 
-$.ajax({
-  type: 'GET',
-  dataType: 'jsonp',
-  crossDomain: true,
-  jsonp: 'json_callback',
-  url: 'https://www.giantbomb.com/api/games/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp',
+var top10listEl = $('#top-10-list');
+var platformButtonsEl = $('#platform-buttons');
+
+// $.ajax({
+//   type: 'GET',
+//   dataType: 'jsonp',
+//   crossDomain: true,
+//   jsonp: 'json_callback',
+//   url: 'https://www.giantbomb.com/api/games/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp',
 
 
-})
+// })
 
-  .then(function (data) {
-    console.log(data);
-  })
-submitButton.on("click", function () {
+//   .then(function (data) {
+//     console.log(data);
+//   })
+
+var playBTN = $(".PS")
+console.log(playBTN.attr("data-platformID"))
+
+$(".btn").on("click", checkPlatformID);
+
+function checkPlatformID(event) {
   event.preventDefault();
-  userInput = inputEl.val();
-  console.log(userInput)
-  return userInput
-})
 
-var platformID = 146;
-var buttonSelection =  'https://www.giantbomb.com/api/games/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp&platforms=' + platformID;
+  var platformID = $(this).attr("data-platformID");
+  console.log(this);
+  var platformApiUrl = 'https://www.giantbomb.com/api/games/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp&sort=number_of_user_reviews:desc&platforms=' + platformID + '&limit=10';
+
+  console.log(platformID);
+
+  $.ajax({
+    type: 'GET',
+    dataType: 'jsonp',
+    crossDomain: true,
+    jsonp: 'json_callback',
+    url: platformApiUrl
+  })
+    .then(function (data) {
+      localStorage.setItem('data', JSON.stringify(data));
+    })
+    .then(function () {
+      location.assign("results.html")
+    });
+}
 
 
-$.ajax({
-  type: 'GET',
-  dataType: 'jsonp',
-  crossDomain: true,
-  jsonp: 'json_callback',
-  url: buttonSelection
-})
 
-.then(function(data){
-  console.log(data);
-});
+
+
+
+var buttonClickHandler = function (event) {
+  var platformID = event.target.getattribute('data-platformID');
+  console.log(platformID);
+  if (platformID) {
+    getFeaturedPlatforms(platform);
+
+    top10listEl.textContent = '';
+  }
+
+  
+};
+printTopTen()
+function printTopTen() {
+  for (i=0; i<= data.length; i++){
+  var gameListItem = $(data.name[i])
+    console.log(gameListItem)
+}
+}
+
+// var getFeaturedPlatforms = function (platform){
+//   var platformApiUrl =  'https://www.giantbomb.com/api/games/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp&platforms=' + platformID + '&limit=10';
+// console.log(platformApiUrl)
+//   $.ajax({
+//     type: 'GET',
+//     dataType: 'jsonp',
+//     crossDomain: true,
+//     jsonp: 'json_callback',
+//     url: platformApiUrl
+//   })
 
 
 
@@ -54,4 +99,21 @@ $.ajax({
 
 
 // FAVORITE BUTTON
+//   .then(function(data){
+//     console.log(data);
+//   });    
+// }
+// var getFeaturedRepos = function (language) {
+//   var apiUrl = 'https://api.github.com/search/repositories?q=' + language + '+is:featured&sort=help-wanted-issues';
 
+
+//   fetch(apiUrl).then(function (response) {
+//     if (response.ok) {
+//       response.json().then(function (data) {
+//         displayRepos(data.items, language);
+//       });
+//     } else {
+//       alert('Error: ' + response.statusText);
+//     }
+//   });
+// };

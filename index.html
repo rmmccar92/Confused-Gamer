@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -49,6 +50,34 @@
             </li>
           </ul>
         </div>
+        
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <script src="https://use.fontawesome.com/24eeb2b29c.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="assets/style.css" />
+
+    <title>Document</title>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo center">Project Title</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a class="navLinks" href="index.html">Home</a></li>
+        </ul>
+        <ul id="nav-mobile" class="right hid-on-med-and-down">
+          <li><a class="navLinks" href="results.html">Results</a></li>
+          <!-- <li><a class="navLinks" href="collapsible.html">JavaScript</a></li> -->
+        </ul>
       </div>
     </nav>
   </div>
@@ -113,6 +142,7 @@
       interval: 5000
     })
   </script>
+
 
 
 
@@ -191,6 +221,46 @@
 
 
 </body>
+
+
+    <div class="card-holder">
+        <div class="card center">
+            <div class="wrapper">
+              <input
+                type="text"
+                class="input"
+                placeholder="Game Search - Coming Soon!"
+              />
+            </div>
+            <div class="searchbtn">
+              <form class="submit">
+                <input type="submit" id="submitBtn" value="Submit" />
+              </form>
+            </div>
+          </div>
+             <div class="platforms card center">
+               <h5>Search by platform</h5>
+                  <div id="platform-buttons">
+                    <div>                   
+                      <button class="btn" data-platformID="94" >PC</button><br><br>
+                    </div>  
+                    <div>
+                      <button class="btn PS" data-platformID="176,146">Playstation</button><br><br>
+                    </div>
+                    <div>
+                      <button  class="btn" data-platformID="179,145">Xbox</button><br><br>
+                    </div>
+                    <div>
+                      <button class="btn" data-platformID="157,139,117">Nintendo</button><br><br>
+                    </div>
+                  </div>
+             </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 
 </html>
 
