@@ -40,8 +40,8 @@ console.log(data.results[5].name);
 
 topTenAppend()
 function topTenAppend() {
-    for (i = 0; i < data.results; i++) {
-    topTen.append("a href='#!' class='white-text game-1>" + data.results[i].name + "</a>")
+    for (i = 0; i < data.results.length; i++) {
+    topTen.append("<a href='#!'class='collection-item black darken-1 white-text game-1'>" + data.results[i].name + "</a>")
     }
 }
 
