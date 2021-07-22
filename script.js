@@ -5,7 +5,7 @@
 // Info page will feature game title, release date, genre, description, platform, 
 
 // We can use the price API as a back up option. 
-// other options could be a separate game database
+
 var submitButton = $("#submitBtn");
 var inputEl = $('.input');
 var userInput;
@@ -29,7 +29,11 @@ var platformButtonsEl = $('#platform-buttons');
 
 $(document).ready(function(){
   $('.sidenav').sidenav();
-}); //supposed to initialize hamburger menu when screen is minimized or on mobile
+});
+
+// $(document).ready(function(){
+//   $('.sidenav').sidenav();
+// }); //supposed to initialize hamburger menu when screen is minimized or on mobile
 
 
 $(".btn").on("click", checkPlatformID);
