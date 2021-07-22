@@ -37,7 +37,7 @@ function checkPlatformID(event) {
 
   var platformID = $(this).attr("data-platformID");
   console.log(this);
-  var platformApiUrl = 'https://www.giantbomb.com/api/games/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp&platforms=' + platformID + '&limit=10';
+  var platformApiUrl = 'https://www.giantbomb.com/api/games/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp&sort=number_of_user_reviews:desc&platforms=' + platformID + '&limit=10';
 
   console.log(platformID);
 
@@ -72,7 +72,13 @@ var buttonClickHandler = function (event) {
 
   
 };
-
+printTopTen()
+function printTopTen() {
+  for (i=0; i<= data.length; i++){
+  var gameListItem = $(data.name[i])
+    console.log(gameListItem)
+}
+}
 
 // var getFeaturedPlatforms = function (platform){
 //   var platformApiUrl =  'https://www.giantbomb.com/api/games/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp&platforms=' + platformID + '&limit=10';

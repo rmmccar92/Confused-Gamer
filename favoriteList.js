@@ -20,6 +20,8 @@ var game8El = $(".game-8");
 var game9El = $(".game-9");
 var game10El = $(".game-10");
 
+var topTen = $(".top-10-games");
+
 var listCount = 0
 
 localStorageCount = localStorage.getItem("count");
@@ -29,9 +31,19 @@ function pageLoad() {
     if (localStorage.getItem("count") != null) {
         listCount = localStorage.getItem("count")
     }
-    console.log(JSON.parse(localStorage.getItem('data')))
 }
 
+
+var data = JSON.parse(localStorage.getItem('data'))
+console.log("data: ", data)
+console.log(data.results[5].name);
+
+topTenAppend()
+function topTenAppend() {
+    for (i = 0; i < data.results; i++) {
+    topTen.append("a href='#!' class='white-text game-1>" + data.results[i].name + "</a>")
+    }
+}
 
 
 var savedListEl = $(".saved-list")
@@ -120,21 +132,21 @@ Button10.on("click", function () {
 })
 countStyling();
 function countStyling() {
-    for (i = 0; i < localStorageCount; i++){
+    for (i = 0; i < localStorageCount; i++) {
         if (i % 2 === 0) {
             console.log("the count is even");
         }
         else {
             console.log("the count is odd");
         }
-}
+    }
 }
 
 // Appending to Wish List
 for (i = 0; i < localStorageCount; i++) {
     var savedItem = localStorage.getItem(i);
     var listItem = $(".saved-list").addClass("saved-games");
-    if (i % 2 === 0){
+    if (i % 2 === 0) {
         listItem.append("<a href='#!'class='collection-item black darken-1 white-text'>" + savedItem + "</a>");
     }
     else {
