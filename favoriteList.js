@@ -41,8 +41,9 @@ console.log(data.results[5].name);
 topTenAppend()
 function topTenAppend() {
     for (i = 0; i < data.results.length; i++) {
-    topTen.append("<a href='#!'class='collection-item black darken-1 white-text game-1'>" + data.results[i].name + "</a>")
+    topTen.append("<a href='#!'class='collection-item black darken-1 white-text' id = 'game"+ [i + 1] +"'>" + data.results[i].name + "</a>")
     }
+    $(topTen.children()).append("<a class='btn-floating btn-small waves-effect waves-light deep-purple accent-3 game-1-button'><i class='material-icons'>add</i></a>")
 }
 
 
