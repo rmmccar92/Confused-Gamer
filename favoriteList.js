@@ -154,3 +154,21 @@ for (i = 0; i < localStorageCount; i++) {
         listItem.append("<a href='#!'class='collection-item purple darken-3 white-text'>" + savedItem + "</a>")
     }
 }
+
+// Daniel's code for game detail writing
+var gameTitle = data.results[i].name;
+var gameGenre =data.results[i].genre;
+// var gameRating = 
+// var gameDescription =
+// var gameReview = 
+
+
+$("#game"+ [i + 1] +"").on("click", function (){
+    gameInfoTitle.innerhtml = gameTitle;
+    gameInfoDesc.innerhtml = gameDescription;
+    gameInfoGenre.innerhtml = "Genre: " + gameGenre;
+    gameInfoRating.innerhtml = "Rating: " + gameReview;
+    gameInfoReview.innerhtml = gameReview;
+
+});
+
