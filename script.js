@@ -91,12 +91,21 @@ function printTopTen() {
 //     url: platformApiUrl
 //   })
 
+
+
+
+
+
+
+
+// FAVORITE BUTTON
 //   .then(function(data){
 //     console.log(data);
 //   });    
 // }
 // var getFeaturedRepos = function (language) {
 //   var apiUrl = 'https://api.github.com/search/repositories?q=' + language + '+is:featured&sort=help-wanted-issues';
+
 
 //   fetch(apiUrl).then(function (response) {
 //     if (response.ok) {
