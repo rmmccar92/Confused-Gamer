@@ -32,10 +32,13 @@ $(document).ready(function(){
   $('.slider').slider();
 });
 
-// $(document).ready(function(){
-//   $('.sidenav').sidenav();
-// }); //supposed to initialize hamburger menu when screen is minimized or on mobile
-
+const slider = document.querySelector('.slider');
+M.slider.init(slider, {
+  indicators: false,
+  height: 500,
+  transition: 500,
+  interval: 5000
+})
 
 $(".btn").on("click", checkPlatformID);
 
