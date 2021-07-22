@@ -28,7 +28,6 @@ var platformButtonsEl = $('#platform-buttons');
 //   })
 
 var playBTN = $(".PS")
-console.log(playBTN.attr("data-platformID"))
 
 $(".btn").on("click", checkPlatformID);
 
