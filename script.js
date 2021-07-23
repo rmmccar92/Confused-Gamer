@@ -5,7 +5,7 @@
 // Info page will feature game title, release date, genre, description, platform, 
 
 // We can use the price API as a back up option. 
-// other options could be a separate game database
+
 var submitButton = $("#submitBtn");
 var inputEl = $('.input');
 var userInput;
@@ -27,7 +27,11 @@ var platformButtonsEl = $('#platform-buttons');
 //     console.log(data);
 //   })
 
-var playBTN = $(".PS")
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+  $('.slider').slider();
+});
+
 
 $(".btn").on("click", checkPlatformID);
 
@@ -59,25 +63,14 @@ function checkPlatformID(event) {
 
 
 
+// var buttonClickHandler = function (event) {
+//   var platformID = event.target.getattribute('data-platformID');
+//   console.log(platformID);
+//   if (platformID) {
+//     getFeaturedPlatforms(platform);
 
-var buttonClickHandler = function (event) {
-  var platformID = event.target.getattribute('data-platformID');
-  console.log(platformID);
-  if (platformID) {
-    getFeaturedPlatforms(platform);
-
-    top10listEl.textContent = '';
-  }
-
-  
-};
-printTopTen()
-function printTopTen() {
-  for (i=0; i<= data.length; i++){
-  var gameListItem = $(data.name[i])
-    console.log(gameListItem)
-}
-}
+//     top10listEl.textContent = '';
+//   }
 
 // var getFeaturedPlatforms = function (platform){
 //   var platformApiUrl =  'https://www.giantbomb.com/api/games/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp&platforms=' + platformID + '&limit=10';
@@ -90,12 +83,21 @@ function printTopTen() {
 //     url: platformApiUrl
 //   })
 
+
+
+
+
+
+
+
+// FAVORITE BUTTON
 //   .then(function(data){
 //     console.log(data);
 //   });    
 // }
 // var getFeaturedRepos = function (language) {
 //   var apiUrl = 'https://api.github.com/search/repositories?q=' + language + '+is:featured&sort=help-wanted-issues';
+
 
 //   fetch(apiUrl).then(function (response) {
 //     if (response.ok) {
