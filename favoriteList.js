@@ -75,7 +75,7 @@ for (i = 0; i < localStorageCount; i++) {
 
 //Append Image and Videos to Game Details
 
-var imageURL = data.results[0].image.icon_url;
+var imageURL = data.results[0].image.medium_url;
 console.log(imageURL);
 var image = new Image();
 image.src = imageURL;
