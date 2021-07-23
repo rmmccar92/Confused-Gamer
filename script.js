@@ -32,13 +32,13 @@ $(document).ready(function(){
   $('.slider').slider();
 });
 
-// const slider = document.querySelector('.slider');
-// M.slider.init(slider, {
-//   indicators: false,
-//   height: 500,
-//   transition: 500,
-//   interval: 5000
-// })
+const slider = document.querySelector('.slider');
+$('.slider').init(slider, {
+  indicators: false,
+  height: 500,
+  transition: 500,
+  interval: 5000
+})
 
 $(".btn").on("click", checkPlatformID);
 
@@ -78,14 +78,6 @@ function checkPlatformID(event) {
 
 //     top10listEl.textContent = '';
 //   }
-
-printTopTen()
-function printTopTen() {
-  for (i=0; i<= data.length; i++){
-  var gameListItem = $(data.name[i])
-    console.log(gameListItem)
-}
-}
 
 // var getFeaturedPlatforms = function (platform){
 //   var platformApiUrl =  'https://www.giantbomb.com/api/games/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp&platforms=' + platformID + '&limit=10';
