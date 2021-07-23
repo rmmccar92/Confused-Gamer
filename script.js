@@ -32,13 +32,6 @@ $(document).ready(function(){
   $('.slider').slider();
 });
 
-const slider = document.querySelector('.slider');
-$('.slider').init(slider, {
-  indicators: false,
-  height: 500,
-  transition: 500,
-  interval: 5000
-})
 
 $(".btn").on("click", checkPlatformID);
 
