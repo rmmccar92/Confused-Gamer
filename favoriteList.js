@@ -35,7 +35,7 @@ function firstListItem() {
             var descValue = data.results.deck;
             var genreValue = data.results.genres ? data.results.genres[0].name : "Game genre not available";
             var ratingValue = data.results.original_game_rating ? data.results.original_game_rating[0].name : "Game rating not available";
-
+            var bombValue = data.results.site_detail_url;
             var imageURL = data.results.image.medium_url;
             $('#photoBox').empty()
             console.log(imageURL);
@@ -48,6 +48,7 @@ function firstListItem() {
             gameDesc.innerHTML = descValue;
             gameGenre.innerHTML = "Genre: " + genreValue;
             gameRating.innerHTML = "Rating: " + ratingValue;
+            bombSite.innerHTML = `<a href=${bombValue} target="_blank">click here!</a>`;
         })
 }
 
@@ -61,7 +62,6 @@ function topTenAppend() {
     for (i = 0; i < data.results.length; i++) {
         var gameEl = "#game" + [i + 1]
         topTen.append("<a href='#!'class='collection-item black darken-1 white-text' data-index='" + [i] + "' id = 'game" + [i + 1] + "'data-guid='" + data.results[i].guid + "'>" + data.results[i].name + "</a>")
-        localStorage.setItem(data.results[i].name, data.results[i].guid)
         var gameBtn = "<a class='btn-floating btn-small waves-effect waves-light deep-purple accent-3 game-" + [i + 1] + "-button'><i class='material-icons'>add</i></a>"
         $(gameEl).append(gameBtn)
 
@@ -69,7 +69,9 @@ function topTenAppend() {
 }
 
 $(topTen).on('click', '.btn-small', function () {
-    var selection = ($(this).parent().text().replace("add", ""))
+    var selection = $(this).parent().text().replace("add", "")
+    var guid = $(this).parent().attr("data-guid")
+    localStorage.setItem(selection, guid)
     localStorage.setItem(listCount, selection);
     var listItem = $(".saved-list");
     listItem.append("<a href='#!'class='collection-item black darken-1 white-text'>" + selection + "</a>");
