@@ -79,8 +79,8 @@ $(topTen).on('click' , 'a' , function() {
         // console.log(data);
         var titleValue = data.results.name;
         var descValue = data.results.deck;
-        var genreValue = data.results.genres[0].name;
-        var ratingValue = data.results.original_game_rating[0].name;
+        var genreValue = data.results.genres ? data.results.genres[0].name: "Game genre not available";
+        var ratingValue = data.results.original_game_rating ? data.results.original_game_rating[0].name: "Game rating not available";
 
         // console.log(data.results.name)
         // // console.log(data.results.description)
