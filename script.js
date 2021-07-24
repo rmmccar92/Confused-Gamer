@@ -6,6 +6,8 @@
 
 // We can use the price API as a back up option. 
 
+// API key: 073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb
+
 var submitButton = $("#submitBtn");
 var inputEl = $('.input');
 var userInput;
@@ -13,12 +15,14 @@ var userInput;
 var top10listEl = $('#top-10-list');
 var platformButtonsEl = $('#platform-buttons');
 
+
 // $.ajax({
 //   type: 'GET',
 //   dataType: 'jsonp',
 //   crossDomain: true,
 //   jsonp: 'json_callback',
 //   url: 'https://www.giantbomb.com/api/games/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp',
+
 
 $(document).ready(function(){
   $('.sidenav').sidenav();
@@ -52,53 +56,3 @@ function checkPlatformID(event) {
     });
 }
 
-
-
-
-
-// var buttonClickHandler = function (event) {
-//   var platformID = event.target.getattribute('data-platformID');
-//   console.log(platformID);
-//   if (platformID) {
-//     getFeaturedPlatforms(platform);
-
-//     top10listEl.textContent = '';
-//   }
-
-// var getFeaturedPlatforms = function (platform){
-//   var platformApiUrl =  'https://www.giantbomb.com/api/games/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp&platforms=' + platformID + '&limit=10';
-// console.log(platformApiUrl)
-//   $.ajax({
-//     type: 'GET',
-//     dataType: 'jsonp',
-//     crossDomain: true,
-//     jsonp: 'json_callback',
-//     url: platformApiUrl
-//   })
-
-
-
-
-
-
-
-
-// FAVORITE BUTTON
-//   .then(function(data){
-//     console.log(data);
-//   });    
-// }
-// var getFeaturedRepos = function (language) {
-//   var apiUrl = 'https://api.github.com/search/repositories?q=' + language + '+is:featured&sort=help-wanted-issues';
-
-
-//   fetch(apiUrl).then(function (response) {
-//     if (response.ok) {
-//       response.json().then(function (data) {
-//         displayRepos(data.items, language);
-//       });
-//     } else {
-//       alert('Error: ' + response.statusText);
-//     }
-//   });
-// };

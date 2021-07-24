@@ -31,18 +31,18 @@ function pageLoad() {
     if (localStorage.getItem("count") != null) {
         listCount = localStorage.getItem("count")
     }
-}
+};
 
 
-var data = JSON.parse(localStorage.getItem('data'))
-console.log("data: ", data)
+var data = JSON.parse(localStorage.getItem('data'));
+console.log("data: ", data);
 
 
 topTenAppend()
 function topTenAppend() {
     for (i = 0; i < data.results.length; i++) {
         var gameEl = "#game" + [i + 1]
-        topTen.append("<a href='#!'class='collection-item black darken-1 white-text' id = 'game" + [i + 1] + "'>" + data.results[i].name + "</a>")
+        topTen.append("<a href='#!'class='collection-item black darken-1 white-text' data-index='" + [i] + "' id = 'game" + [i + 1] + "'>" + data.results[i].name + "</a>")
         var gameBtn = "<a class='btn-floating btn-small waves-effect waves-light deep-purple accent-3 game-" + [i + 1] + "-button'><i class='material-icons'>add</i></a>"
         $(gameEl).append(gameBtn)
 
@@ -55,6 +55,13 @@ $(topTen).on('click' , '.btn-small' , function () {
         listItem.append("<a href='#!'class='collection-item black darken-1 white-text'>" + $(this).parent().text() + "</a>");
         listCount++
         localStorage.setItem("count", listCount);
+})
+
+$(topTen).on('click' , 'a' , function() {
+    console.log($(this).attr('data-index'))
+    var index = $(this).attr('data-index')
+    var guid = data.results[index].guid
+    console.log(guid)
 })
 
 
