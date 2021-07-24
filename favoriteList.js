@@ -78,3 +78,12 @@ for (i = 0; i < localStorageCount; i++) {
         listItem.append("<a href='#!'class='collection-item purple darken-3 white-text'>" + savedItem + "</a>")
     }
 }
+
+
+//Append Image and Videos to Game Details
+
+var imageURL = data.results[0].image.medium_url;
+console.log(imageURL);
+var image = new Image();
+image.src = imageURL;
+document.getElementById('photoBox').appendChild(image);
