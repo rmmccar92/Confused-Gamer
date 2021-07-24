@@ -17,7 +17,7 @@ function pageLoad() {
 
 firstListItem()
 function firstListItem() {
-   data = JSON.parse(localStorage.getItem('data'));
+    data = JSON.parse(localStorage.getItem('data'));
     var guid3 = data.results[0].guid
 
     // api call for title, genre, and description
@@ -61,7 +61,7 @@ function topTenAppend() {
     for (i = 0; i < data.results.length; i++) {
         var gameEl = "#game" + [i + 1]
         topTen.append("<a href='#!'class='collection-item black darken-1 white-text' data-index='" + [i] + "' id = 'game" + [i + 1] + "'data-guid='" + data.results[i].guid + "'>" + data.results[i].name + "</a>")
-        localStorage.setItem (data.results[i].name , data.results[i].guid)
+        localStorage.setItem(data.results[i].name, data.results[i].guid)
         var gameBtn = "<a class='btn-floating btn-small waves-effect waves-light deep-purple accent-3 game-" + [i + 1] + "-button'><i class='material-icons'>add</i></a>"
         $(gameEl).append(gameBtn)
 
@@ -93,13 +93,12 @@ $(topTen).on('click', 'a', function () {
         jsonp: 'json_callback',
         url: singleGameAPI
     })
-
         .then((data) => {
             var titleValue = data.results.name;
-            var descValue = data.results.deck;
-            var genreValue = data.results.genres ? data.results.genres[0].name : "Game genre not available";
-            var ratingValue = data.results.original_game_rating ? data.results.original_game_rating[0].name : "Game rating not available";
-
+            var descValue = data.results.deck ? data.results.deck : "Sorry, no Giant Bomb users have written a description for " + titleValue + " yet!";
+            var genreValue = data.results.genres ? data.results.genres[0].name : "Sorry, a genre for " + titleValue + ", is not listed.";
+            var ratingValue = data.results.original_game_rating ? data.results.original_game_rating[0].name : "Sorry, no Giant Bomb users have reviewed " + titleValue + " yet!";
+            var bombValue = data.results.site_detail_url;
             var imageURL = data.results.image.medium_url;
             $('#photoBox').empty()
             console.log(imageURL);
@@ -112,6 +111,7 @@ $(topTen).on('click', 'a', function () {
             gameDesc.innerHTML = descValue;
             gameGenre.innerHTML = "Genre: " + genreValue;
             gameRating.innerHTML = "Rating: " + ratingValue;
+            bombSite.innerHTML = `<a href=${bombValue} target="_blank">click here!</a>`;
         })
 
 })
@@ -134,9 +134,10 @@ $(savedListEl).on('click', 'a', function () {
 
         .then((data) => {
             var titleValue = data.results.name;
-            var descValue = data.results.deck;
-            var genreValue = data.results.genres ? data.results.genres[0].name : "Game genre not available";
-            var ratingValue = data.results.original_game_rating ? data.results.original_game_rating[0].name : "Game rating not available";
+            var descValue = data.results.deck ? data.results.deck : "Sorry, no Giant Bomb users have written a description for " + titleValue + " yet!";
+            var genreValue = data.results.genres ? data.results.genres[0].name : "Sorry, a genre for " + titleValue + ", is not listed.";
+            var ratingValue = data.results.original_game_rating ? data.results.original_game_rating[0].name : "Sorry, no Giant Bomb users have reviewed " + titleValue + " yet!";
+            var bombValue = data.results.site_detail_url;
             var imageURL = data.results.image.medium_url;
             $('#photoBox').empty()
             console.log(imageURL);
@@ -148,11 +149,10 @@ $(savedListEl).on('click', 'a', function () {
             gameDesc.innerHTML = descValue;
             gameGenre.innerHTML = "Genre: " + genreValue;
             gameRating.innerHTML = "Rating: " + ratingValue;
+            bombSite.innerHTML = `<a href=${bombValue} target="_blank">click here!</a> `;
+            console.log(bombValue);
         })
 })
-
-
-// Appending to Wish List
 for (i = 0; i < localStorageCount; i++) {
     var savedItem = localStorage.getItem(i);
     var listItem = $(".saved-list").addClass("saved-games");

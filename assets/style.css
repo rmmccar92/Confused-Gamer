@@ -38,13 +38,13 @@ img {
     color: var(--border)
 } */
 
-#welcomeMessage{
+/* #welcomeMessage{
     width: 60%;
     margin: auto;
     margin-top: 4em;
     color: var(--text1);
     font-size: 20px;
-}
+} */
 .wrapper{
     margin-left: 5px;
     margin-right: 20px;
@@ -54,7 +54,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 25px;
     margin-bottom: 350px;
 }
 
@@ -70,14 +70,16 @@ img {
     /* border: 1px gray solid; */
     border-radius: 5px;
     padding-bottom: 15px; 
+    
 }
 
 .platforms{
     color: var(--text1);
-    padding-bottom: 10px;
-    text-decoration: underline;
+    padding: 10px;
     width: 30%;
-    /* text-decoration: underline; */
+    border: solid;
+    border-color:  var(--border);
+
 }
 
 #submitBtn{
@@ -108,14 +110,15 @@ img {
 
 .pcBtn{
     font-size: 15px;
+
 }
 
 .Btn{
     text-align: center;
     font-size: 20px;
     font-weight: 400;
-    color: var(--links);
-    padding: 7px 11px;
+    color: var(--text1);
+    /* padding: 5px 5px; */
     border-radius: 10px;
     border: 5px solid var(--border);
     background:var(--background);
@@ -147,7 +150,7 @@ img {
     font-size: 20px;
     font-weight: 400;
     color: var(--links);
-    padding: 7px 11px;
+    padding: 4px 11px;
     border-radius: 10px;
     border: 5px solid var(--border);
     background:var(--background);
@@ -224,17 +227,23 @@ img {
     /* border: solid; */
     font-size: 40px;
     width: 100%;
+    padding-top: 20px;
+   
 }
 
 .gameInfoDesc {
     /* border: solid; */
+    font-size: 20px;
     margin-top: 1em;
     width: 100%;
+    padding: 1em;
+    border: solid 1px var(--text1);
 }
 
 #subAndPhoto {
     display: flex;
     flex-direction: row;
+    /* align-items: center; */
     /* border: solid; */
     
 }
@@ -244,12 +253,16 @@ img {
     /* border: solid; */
     margin-top: 1em;
     width: 50%;
+    font-size: 20px;
 }
 .gameInfoGenre {
     /* border: solid; */
     text-align: left;
+    /* border: solid;
+    border-bottom: var(-); */
     margin: 1em;
     width: 90%;
+    
 }
 
 .gameInfoRating {
@@ -257,6 +270,7 @@ img {
     text-align: left;
     margin: 1em;
     width: 90%;
+    
 }
 
 .gameInfoReview {
@@ -264,12 +278,14 @@ img {
     text-align: left;
     margin: 1em;
     width: 90%;
+    
 }
 
 .gameInfoPhoto {
     /* border: solid; */
     margin: 1em;
-    width: 50%
+    width: 50%;
+   
 }
 
 #photoBox{
@@ -277,7 +293,9 @@ img {
     justify-content: center;
     /* border: solid; */
     margin-top: 1em;
-    width: 50%; 
+    width: 50%;
+    border: solid 1px var(--text1);
+    background: black;
 }
 
 .gameInfoVideos {
