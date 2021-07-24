@@ -14,11 +14,12 @@ var userInput;
 
 var top10listEl = $('#top-10-list');
 var platformButtonsEl = $('#platform-buttons');
+var searchButton = $('.search-button')
+var searchInput = $('#search')
 
 
 
-
-$(document).ready(function(){
+$(document).ready(function () {
   $('.sidenav').sidenav();
   $('.slider').slider();
 });
@@ -50,3 +51,23 @@ function checkPlatformID(event) {
     });
 }
 
+
+// Searchbar
+searchButton.on('click', function () {
+  var searchItem = searchInput.val();
+  var APISearchUrl = 'https://www.giantbomb.com/api/search/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp&query=' + searchItem + '&limit=10'
+
+  $.ajax({
+    type: 'GET',
+    dataType: 'jsonp',
+    crossDomain: true,
+    jsonp: 'json_callback',
+    url: APISearchUrl
+  })
+    .then(function (data2) {
+      localStorage.setItem('data', JSON.stringify(data2));
+    })
+    .then(function () {
+      location.assign("results.html")
+    });
+})
