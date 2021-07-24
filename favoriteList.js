@@ -62,7 +62,86 @@ $(topTen).on('click' , 'a' , function() {
     var index = $(this).attr('data-index')
     var guid = data.results[index].guid
     console.log(guid)
+
+    // api call for title, genre, and description
+    var singleGameAPI = 'https://www.giantbomb.com/api/game/'+ guid +'/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp';
+    // var ratingAPI = 'https://www.giantbomb.com/api/game_ratings/'+ guid +'/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp';
+    var videoAPI = 'https://www.giantbomb.com/api/videos/'+ guid +'/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp';
+    $.ajax({
+    type: 'GET',
+    dataType: 'jsonp',
+    crossDomain: true,
+    jsonp: 'json_callback',
+    url: singleGameAPI
+    })
+        
+    .then((data) => {
+        // console.log(data);
+        var titleValue = data.results.name;
+        var descValue = data.results.deck;
+        var genreValue = data.results.genres ? data.results.genres[0].name: "Game genre not available";
+        var ratingValue = data.results.original_game_rating ? data.results.original_game_rating[0].name: "Game rating not available";
+
+        // console.log(data.results.name)
+        // // console.log(data.results.description)
+        // console.log(data.results.original_game_rating[0].name)
+    
+        title.innerHTML = titleValue;
+        gameDesc.innerHTML  = descValue;
+        gameGenre.innerHTML = "Genre: " + genreValue;
+        gameRating.innerHTML = "Rating: " + ratingValue;
+    })
+
+    
+    // // api call for rating;
+    // $.ajax({
+    // type: 'GET',
+    // dataType: 'jsonp',
+    // crossDomain: true,
+    // jsonp: 'json_callback',
+    // url: ratingAPI
+    // })
+
+    // .then((data) => {
+    //     // var ratingValue = data.results[0].name;
+    //     console.log(data);
+    //     // gameRating.innerHTML = ratingValue;
+        
+    // })
+    
+    
+
+    // $.ajax({
+    // type: 'GET',
+    // dataType: 'jsonp',
+    // crossDomain: true,
+    // jsonp: 'json_callback',
+    // url: videoAPI
+    // })
+    
+    // .then((data) => {
+    //     console.log("video", data);
+    //     var videoValue = data.results[0].name;
+    //     console.log(data.results[0].name);
+    //     gameVideos.innerHTML = videoValue;
+    //     })
+
+    
+  
+  
 })
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 var savedListEl = $(".saved-list")
