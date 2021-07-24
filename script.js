@@ -16,12 +16,6 @@ var top10listEl = $('#top-10-list');
 var platformButtonsEl = $('#platform-buttons');
 
 
-// $.ajax({
-//   type: 'GET',
-//   dataType: 'jsonp',
-//   crossDomain: true,
-//   jsonp: 'json_callback',
-//   url: 'https://www.giantbomb.com/api/games/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp',
 
 
 $(document).ready(function(){
