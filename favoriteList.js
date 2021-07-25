@@ -82,9 +82,11 @@ $(topTen).on('click', '.btn-small', function () {
 
 // Clicking the text in the top ten list
 $(topTen).on('click', 'a', function () {
-    var index = $(this).attr('data-index')
-    var guid = data.results[index].guid
-    console.log(guid)
+    var index = $(this).attr('data-index');
+    var guid = data.results[index].guid;
+    console.log(guid);
+
+
 
     // api call for title, genre, and description
     var singleGameAPI = 'https://www.giantbomb.com/api/game/' + guid + '/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp';
@@ -161,3 +163,48 @@ for (i = 0; i < localStorageCount; i++) {
     listItem.append("<a href='#!'class='collection-item black darken-1 white-text' data-guid='" + data.results[i].guid + "'>" + savedItem + "</a>");
 }
 
+var genreGame = 'strategy';
+var f2playAPI = 'https://free-to-play-games-database.p.rapidapi.com/api/games?platform=browser&category=' + genreGame + '&sort-by=release-date'
+
+fetch(f2playAPI, {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "a0cca6994cmsh81f3b7fb76d08efp1175c4jsn19381bff6ee1",
+		"x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com"
+	}
+})
+.then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data)
+    //Loop over the data to generate a table, each table row will have a link to the repo url
+    for (var i = 0; i < 5; i++) {
+      // Creating elements, tablerow, tabledata, and anchor
+      var createTableRow = document.createElement('tr');
+      var tableData = document.createElement('td');
+      var link = document.createElement('a');
+
+      // Setting the text of link and the href of the link
+      link.textContent = data[i].freetogame_profile_url;
+      link.href = data[i].freetogame_profile_url;
+
+      // Appending the link to the tabledata and then appending the tabledata to the tablerow
+      // The tablerow then gets appended to the tablebody
+      tableData.appendChild(link);
+      createTableRow.appendChild(tableData);
+      repoTable.appendChild(createTableRow);
+    }
+//   });
+//   .then(function (data) {
+//     console.log(data)
+//     var free2play = data[f].freetogame_profile_url;
+//     var freeTitle = data[f].title;
+//     for(var f =0; f < 5; f++){
+//         freeGames.innerHTML = `<a href=${free2play} target="_blank"></a> `;
+//     }
+//   });
+
+ 
+   
+});
