@@ -20,6 +20,7 @@ function firstListItem() {
     data = JSON.parse(localStorage.getItem('data'));
     var guid3 = data.results[0].guid
 
+   
     // api call for title, genre, and description
     var singleGameAPI = 'https://www.giantbomb.com/api/game/' + guid3 + '/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp';
     $.ajax({
@@ -50,6 +51,7 @@ function firstListItem() {
             gameRating.innerHTML = "Rating: " + ratingValue;
             bombSite.innerHTML = `<a href=${bombValue} target="_blank">click here!</a>`;
         })
+        
 }
 
 
@@ -61,7 +63,7 @@ topTenAppend()
 function topTenAppend() {
     for (i = 0; i < data.results.length; i++) {
         var gameEl = "#game" + [i + 1]
-        topTen.append("<a href='#!'class='collection-item black darken-1 white-text right-list' data-index='" + [i] + "' id = 'game" + [i + 1] + "'data-guid='" + data.results[i].guid + "'>" + data.results[i].name + "</a>")
+        topTen.append("<a href='#!'class='collection-item black darken-1 right-list' data-index='" + [i] + "' id = 'game" + [i + 1] + "'data-guid='" + data.results[i].guid + "'>" + data.results[i].name + "</a>")
         var gameBtn = "<a class='btn-floating btn-small waves-effect waves-light deep-purple accent-3 game-" + [i + 1] + "-button list-button'><i class='material-icons'>add</i></a>"
         $(gameEl).append(gameBtn)
 
@@ -85,7 +87,9 @@ $(topTen).on('click', 'a', function () {
     var index = $(this).attr('data-index')
     var guid = data.results[index].guid
     console.log(guid)
-
+ 
+    $().css('color', 'yellow');
+    
     // api call for title, genre, and description
     var singleGameAPI = 'https://www.giantbomb.com/api/game/' + guid + '/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp';
     $.ajax({
@@ -123,6 +127,7 @@ $(savedListEl).on('click', 'a', function () {
     var index = $(this).attr('data-index');
     var guid2 = localStorage.getItem($(this).text())
 
+    
     // api call for title, genre, and description
     var singleGameAPI = 'https://www.giantbomb.com/api/game/' + guid2 + '/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp';
 
@@ -161,3 +166,11 @@ for (i = 0; i < localStorageCount; i++) {
     listItem.append("<a href='#!'class='collection-item black darken-1 white-text' data-guid='" + data.results[i].guid + "'>" + savedItem + "</a>");
 }
 
+// color change of active tab 
+$(topTen).on('click', 'a', function () {
+
+    if (!$(this).hasClass("active")) {
+        $("a.active").removeClass("active");
+        $(this).addClass("active");
+    }   
+})
