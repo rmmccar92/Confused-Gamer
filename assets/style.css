@@ -30,6 +30,13 @@ img {
     display: block;
 }
 
+tbody {
+    background-color: var(--background);
+}
+
+.focus:focus-visible {
+    color: var(--border);
+}
 /* .nav-wrapper {
     background-color: var(--background)
 } */
