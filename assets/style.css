@@ -204,12 +204,15 @@ img {
 
 #page2wrapper {
     margin-top: 2em;
+    margin-left: 4.5em;
+    margin-right: 4.5em;
 }
 
 #top10 {
     background-color: var(--light);
     border: solid;
     border-color: var(--border);
+    box-shadow:0px 0px 8px var(--border);
 }
 
 #gameInfoContainer {
@@ -217,6 +220,7 @@ img {
     border: solid;
     border-color: var(--border);
     background: var(--light);
+    box-shadow:0px 0px 8px var(--border);
 }
 
 #gameDetailBox {
@@ -312,4 +316,5 @@ img {
     background: var(--light);
     border: solid;
     border-color: var(--border);
+    box-shadow:0px 0px 8px var(--border);
 }
