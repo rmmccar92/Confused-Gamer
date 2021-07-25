@@ -55,7 +55,7 @@ function checkPlatformID(event) {
 // Searchbar
 searchButton.on('click', function () {
   var searchItem = searchInput.val();
-  var APISearchUrl = 'https://www.giantbomb.com/api/search/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp&query=' + searchItem + '&limit=10'
+  var APISearchUrl = 'https://www.giantbomb.com/api/search/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp&query=' + searchItem + '&limit=10&resources=game'
 
   $.ajax({
     type: 'GET',

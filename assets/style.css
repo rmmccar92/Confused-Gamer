@@ -50,6 +50,10 @@ img {
     margin-right: 20px;
 }
 
+.list-button {
+    margin: 0.5em;
+}
+
 .card-holder{
     display: flex;
     justify-content: center;
