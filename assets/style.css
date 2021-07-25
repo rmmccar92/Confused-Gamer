@@ -52,6 +52,15 @@ tbody {
     color: var(--text1);
     font-size: 20px;
 } */
+
+/* .active {
+    color: var(--border);
+} */
+
+/* this class is for the color of the buttons - we can change them to anything we want */
+.collection a.collection-item {
+    color: var(--border);
+}
 .wrapper{
     margin-left: 5px;
     margin-right: 20px;
@@ -90,6 +99,7 @@ tbody {
     width: 30%;
     border: solid;
     border-color:  var(--border);
+    box-shadow:0px 0px 8px var(--border);
 
 }
 
@@ -265,6 +275,7 @@ tbody {
 #subInfoBox{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     /* border: solid; */
     margin-top: 1em;
     width: 50%;
@@ -315,7 +326,8 @@ tbody {
 
 .gameInfoVideos {
     /* border: solid; */
-    margin: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
     height: 12em;
 }
 
