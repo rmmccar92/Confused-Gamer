@@ -30,6 +30,10 @@ img {
     display: block;
 }
 
+tbody {
+    background-color: var(--background);
+}
+
 .focus:focus-visible {
     color: var(--border);
 }
