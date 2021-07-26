@@ -16,6 +16,14 @@
     background-color: var(--background)
 }
 
+.slideText {
+    text-shadow:-2px -2px #000; 
+}
+
+.slideText2 {
+    text-shadow:-1px -1px #FFF; 
+}
+
 .navLinks {
     font-size: 20px;
     color: var(--border)
@@ -37,29 +45,13 @@ tbody {
 .focus:focus-visible {
     color: var(--border);
 }
-/* .nav-wrapper {
-    background-color: var(--background)
-} */
-/* .navLinks {
-    font-size: 20px;
-    color: var(--border)
-} */
-
-/* #welcomeMessage{
-    width: 60%;
-    margin: auto;
-    margin-top: 4em;
-    color: var(--text1);
-    font-size: 20px;
-} */
-
-/* .active {
-    color: var(--border);
-} */
 
 /* this class is for the color of the buttons - we can change them to anything we want */
 .collection a.collection-item {
     color: var(--border);
+}
+.active {
+    color: #FFF;
 }
 .wrapper{
     margin-left: 5px;
@@ -336,4 +328,14 @@ tbody {
     border: solid;
     border-color: var(--border);
     box-shadow:0px 0px 8px var(--border);
+}
+
+
+#freeGamesBox {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border: solid;
+    border-width: 0.1em;
+    border-color: white;
+    color: var(--border);
 }
