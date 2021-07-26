@@ -20,7 +20,11 @@ function firstListItem() {
     data = JSON.parse(localStorage.getItem('data'));
     var guid3 = data.results[0].guid
 
-   
+    if (!$(this).hasClass("active")) {
+        $("a.active").removeClass("active");
+        $(this).addClass("active");
+    } 
+
     // api call for title, genre, and description
     var singleGameAPI = 'https://www.giantbomb.com/api/game/' + guid3 + '/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp';
     $.ajax({
@@ -34,8 +38,8 @@ function firstListItem() {
         .then((data) => {
             var titleValue = data.results.name;
             var descValue = data.results.deck;
-            var genreValue = data.results.genres ? data.results.genres[0].name : "Game genre not available";
-            var ratingValue = data.results.original_game_rating ? data.results.original_game_rating[0].name : "Game rating not available";
+            var genreValue = data.results.genres ? data.results.genres[0].name : "Sorry, a genre for " + titleValue + ", is not listed.";
+            var ratingValue = data.results.original_game_rating ? data.results.original_game_rating[0].name : "Sorry, no Giant Bomb users have rated " + titleValue + " yet!";
             var bombValue = data.results.site_detail_url;
             var imageURL = data.results.image.medium_url;
             $('#photoBox').empty()
@@ -49,8 +53,12 @@ function firstListItem() {
             gameDesc.innerHTML = descValue;
             gameGenre.innerHTML = "Genre: " + genreValue;
             gameRating.innerHTML = "Rating: " + ratingValue;
-            bombSite.innerHTML = `<a href=${bombValue} target="_blank">click here!</a>`;
+            bombSite.innerHTML = `<a style="color: #4ddb4f" href=${bombValue} target="_blank">click here!</a>`;
         })
+
+       
+            
+               
         
 }
 
@@ -88,7 +96,7 @@ $(topTen).on('click', 'a', function () {
     var guid = data.results[index].guid
     console.log(guid)
  
-    $().css('color', 'yellow');
+    
     
     // api call for title, genre, and description
     var singleGameAPI = 'https://www.giantbomb.com/api/game/' + guid + '/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp';
@@ -103,7 +111,7 @@ $(topTen).on('click', 'a', function () {
             var titleValue = data.results.name;
             var descValue = data.results.deck ? data.results.deck : "Sorry, no Giant Bomb users have written a description for " + titleValue + " yet!";
             var genreValue = data.results.genres ? data.results.genres[0].name : "Sorry, a genre for " + titleValue + ", is not listed.";
-            var ratingValue = data.results.original_game_rating ? data.results.original_game_rating[0].name : "Sorry, no Giant Bomb users have reviewed " + titleValue + " yet!";
+            var ratingValue = data.results.original_game_rating ? data.results.original_game_rating[0].name : "Sorry, no Giant Bomb users have rated " + titleValue + " yet!";
             var bombValue = data.results.site_detail_url;
             var imageURL = data.results.image.medium_url;
             $('#photoBox').empty()
@@ -156,7 +164,7 @@ $(savedListEl).on('click', 'a', function () {
             gameDesc.innerHTML = descValue;
             gameGenre.innerHTML = "Genre: " + genreValue;
             gameRating.innerHTML = "Rating: " + ratingValue;
-            bombSite.innerHTML = `<a href=${bombValue} target="_blank">click here!</a> `;
+            bombSite.innerHTML = `<a style="color: #4ddb4f" href=${bombValue} target="_blank">click here!</a> `;
             console.log(bombValue);
         })
 })
@@ -174,6 +182,7 @@ $(topTen).on('click', 'a', function () {
         $(this).addClass("active");
     }   
 })
+
 var genreGame = 'strategy';
 var f2playAPI = 'https://free-to-play-games-database.p.rapidapi.com/api/games?platform=browser&category=' + genreGame + '&sort-by=release-date'
 
