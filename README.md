@@ -39,5 +39,7 @@ As a user, I want a list of free to play games to populate.
 
 As a user, I want to click on a link that will redirect me to that free game and play it immediately. 
 
-
-
+![Image 1 of application:]()
+![Image 2 of application:]()
+![Image 3 of application:]()
+![Image 4 of application:]()
