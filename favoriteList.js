@@ -74,7 +74,8 @@ function topTenAppend() {
         var gameEl = "#game" + [i + 1]
         topTen.append("<a href='#!'class='collection-item black darken-1 right-list' data-index='" + [i] + "' id = 'game" + [i + 1] + "'data-guid='" + data.results[i].guid + "'>" + data.results[i].name + "</a>")
         var gameBtn = "<a class='btn-floating btn-small waves-effect waves-light deep-purple accent-3 game-" + [i + 1] + "-button list-button'><i class='material-icons'>add</i></a>"
-        $(gameEl).append(gameBtn)
+        $(gameEl).append(gameBtn);
+        $("#game1").addClass("active")
 
 
     }
@@ -220,17 +221,5 @@ fetch(f2playAPI, {
       tableData.appendChild(link);
       createTableRow.appendChild(tableData);
       repoTable.appendChild(createTableRow);
-    }
-//   });
-//   .then(function (data) {
-//     console.log(data)
-//     var free2play = data[f].freetogame_profile_url;
-//     var freeTitle = data[f].title;
-//     for(var f =0; f < 5; f++){
-//         freeGames.innerHTML = `<a href=${free2play} target="_blank"></a> `;
-//     }
-//   });
-
- 
-   
+    }   
 });
