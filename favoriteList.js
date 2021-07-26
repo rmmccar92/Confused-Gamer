@@ -1,5 +1,3 @@
-
-
 var topTen = $(".top-10-games");
 var savedListEl = $(".saved-list");
 
@@ -8,6 +6,7 @@ var listCount = 0
 localStorageCount = localStorage.getItem("count");
 
 pageLoad();
+
 function pageLoad() {
     if (localStorage.getItem("count") != null) {
         listCount = localStorage.getItem("count")
@@ -21,20 +20,26 @@ function pageLoad() {
 };
 
 firstListItem()
+
 function firstListItem() {
     data = JSON.parse(localStorage.getItem('data'));
     var guid3 = data.results[0].guid
+<<<<<<< HEAD
+
+
+=======
     
      
+>>>>>>> 42fdd30633d8731adac05b34150f52c0b672b5f4
     // api call for title, genre, and description
     var singleGameAPI = 'https://www.giantbomb.com/api/game/' + guid3 + '/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp';
     $.ajax({
-        type: 'GET',
-        dataType: 'jsonp',
-        crossDomain: true,
-        jsonp: 'json_callback',
-        url: singleGameAPI
-    })
+            type: 'GET',
+            dataType: 'jsonp',
+            crossDomain: true,
+            jsonp: 'json_callback',
+            url: singleGameAPI
+        })
 
         .then((data) => {
             var titleValue = data.results.name;
@@ -57,10 +62,13 @@ function firstListItem() {
             bombSite.innerHTML = `<a style="color: #4ddb4f" href=${bombValue} target="_blank">click here!</a>`;
         })
 
+<<<<<<< HEAD
+=======
        
             
                
         
+>>>>>>> 42fdd30633d8731adac05b34150f52c0b672b5f4
 }
 
 
@@ -69,6 +77,7 @@ console.log("data: ", data);
 
 
 topTenAppend()
+
 function topTenAppend() {
     for (i = 0; i < data.results.length; i++) {
         var gameEl = "#game" + [i + 1]
@@ -98,23 +107,33 @@ $(topTen).on('click', 'a', function () {
     var index = $(this).attr('data-index')
     var guid = data.results[index].guid
     console.log(guid)
+<<<<<<< HEAD
+
+    $().css('color', 'yellow');
+
+=======
  
     
     
+>>>>>>> 42fdd30633d8731adac05b34150f52c0b672b5f4
     // api call for title, genre, and description
     var singleGameAPI = 'https://www.giantbomb.com/api/game/' + guid + '/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp';
     $.ajax({
-        type: 'GET',
-        dataType: 'jsonp',
-        crossDomain: true,
-        jsonp: 'json_callback',
-        url: singleGameAPI
-    })
+            type: 'GET',
+            dataType: 'jsonp',
+            crossDomain: true,
+            jsonp: 'json_callback',
+            url: singleGameAPI
+        })
         .then((data) => {
             var titleValue = data.results.name;
             var descValue = data.results.deck ? data.results.deck : "Sorry, no Giant Bomb users have written a description for " + titleValue + " yet!";
             var genreValue = data.results.genres ? data.results.genres[0].name : "Sorry, a genre for " + titleValue + ", is not listed.";
+<<<<<<< HEAD
+            var ratingValue = data.results.original_game_rating ? data.results.original_game_rating[0].name : titleValue + " rating not available";
+=======
             var ratingValue = data.results.original_game_rating ? data.results.original_game_rating[0].name : "Sorry, no Giant Bomb users have rated " + titleValue + " yet!";
+>>>>>>> 42fdd30633d8731adac05b34150f52c0b672b5f4
             var bombValue = data.results.site_detail_url;
             var imageURL = data.results.image.medium_url;
             $('#photoBox').empty()
@@ -138,17 +157,17 @@ $(savedListEl).on('click', 'a', function () {
     var index = $(this).attr('data-index');
     var guid2 = localStorage.getItem($(this).text())
 
-    
+
     // api call for title, genre, and description
     var singleGameAPI = 'https://www.giantbomb.com/api/game/' + guid2 + '/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp';
 
     $.ajax({
-        type: 'GET',
-        dataType: 'jsonp',
-        crossDomain: true,
-        jsonp: 'json_callback',
-        url: singleGameAPI
-    })
+            type: 'GET',
+            dataType: 'jsonp',
+            crossDomain: true,
+            jsonp: 'json_callback',
+            url: singleGameAPI
+        })
 
         .then((data) => {
             var titleValue = data.results.name;
@@ -185,52 +204,43 @@ $(topTen).on('click', 'a', function () {
         $("a.active").removeClass("active");
         $(this).addClass("active");
     }
+<<<<<<< HEAD
+=======
         
 
+>>>>>>> 42fdd30633d8731adac05b34150f52c0b672b5f4
 })
 
 var genreGame = 'strategy';
 var f2playAPI = 'https://free-to-play-games-database.p.rapidapi.com/api/games?platform=browser&category=' + genreGame + '&sort-by=release-date'
 
 fetch(f2playAPI, {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "a0cca6994cmsh81f3b7fb76d08efp1175c4jsn19381bff6ee1",
-		"x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com"
-	}
-})
-.then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data)
-    //Loop over the data to generate a table, each table row will have a link to the repo url
-    for (var i = 0; i < 5; i++) {
-      // Creating elements, tablerow, tabledata, and anchor
-      var createTableRow = document.createElement('tr');
-      var tableData = document.createElement('td');
-      var link = document.createElement('a');
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "a0cca6994cmsh81f3b7fb76d08efp1175c4jsn19381bff6ee1",
+            "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com"
+        }
+    })
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data)
+        //Loop over the data to generate a table, each table row will have a link to the repo url
+        for (var i = 0; i < 5; i++) {
+            // Creating elements, tablerow, tabledata, and anchor
+            var createTableRow = document.createElement('tr');
+            var tableData = document.createElement('td');
+            var link = document.createElement('a');
 
-      // Setting the text of link and the href of the link
-      link.textContent = data[i].freetogame_profile_url;
-      link.href = data[i].freetogame_profile_url;
-
-      // Appending the link to the tabledata and then appending the tabledata to the tablerow
-      // The tablerow then gets appended to the tablebody
-      tableData.appendChild(link);
-      createTableRow.appendChild(tableData);
-      repoTable.appendChild(createTableRow);
-    }
-//   });
-//   .then(function (data) {
-//     console.log(data)
-//     var free2play = data[f].freetogame_profile_url;
-//     var freeTitle = data[f].title;
-//     for(var f =0; f < 5; f++){
-//         freeGames.innerHTML = `<a href=${free2play} target="_blank"></a> `;
-//     }
-//   });
-
- 
-   
-});
+            // Setting the text of link and the href of the link
+            link.textContent = data[i].freetogame_profile_url;
+            link.href = data[i].freetogame_profile_url;
+            link.setAttribute("target", "_blank");
+            // Appending the link to the tabledata and then appending the tabledata to the tablerow
+            // The tablerow then gets appended to the tablebody
+            tableData.appendChild(link);
+            createTableRow.appendChild(tableData);
+            repoTable.appendChild(createTableRow);
+        }
+    });
