@@ -14,7 +14,6 @@ function pageLoad() {
     }
      else if (localStorage.getItem("count") !=0){
          (!$(this).addClass("active"));
-         console.log("it worked ya dingus");
      }
 
 };
@@ -24,13 +23,8 @@ firstListItem()
 function firstListItem() {
     data = JSON.parse(localStorage.getItem('data'));
     var guid3 = data.results[0].guid
-<<<<<<< HEAD
 
 
-=======
-    
-     
->>>>>>> 42fdd30633d8731adac05b34150f52c0b672b5f4
     // api call for title, genre, and description
     var singleGameAPI = 'https://www.giantbomb.com/api/game/' + guid3 + '/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp';
     $.ajax({
@@ -62,13 +56,6 @@ function firstListItem() {
             bombSite.innerHTML = `<a style="color: #4ddb4f" href=${bombValue} target="_blank">click here!</a>`;
         })
 
-<<<<<<< HEAD
-=======
-       
-            
-               
-        
->>>>>>> 42fdd30633d8731adac05b34150f52c0b672b5f4
 }
 
 
@@ -83,9 +70,8 @@ function topTenAppend() {
         var gameEl = "#game" + [i + 1]
         topTen.append("<a href='#!'class='collection-item black darken-1 right-list' data-index='" + [i] + "' id = 'game" + [i + 1] + "'data-guid='" + data.results[i].guid + "'>" + data.results[i].name + "</a>")
         var gameBtn = "<a class='btn-floating btn-small waves-effect waves-light deep-purple accent-3 game-" + [i + 1] + "-button list-button'><i class='material-icons'>add</i></a>"
-        $(gameEl).append(gameBtn)
-
-
+        $(gameEl).append(gameBtn);
+        $("#game1").addClass("active");
     }
 
 }
@@ -107,15 +93,9 @@ $(topTen).on('click', 'a', function () {
     var index = $(this).attr('data-index')
     var guid = data.results[index].guid
     console.log(guid)
-<<<<<<< HEAD
 
     $().css('color', 'yellow');
 
-=======
- 
-    
-    
->>>>>>> 42fdd30633d8731adac05b34150f52c0b672b5f4
     // api call for title, genre, and description
     var singleGameAPI = 'https://www.giantbomb.com/api/game/' + guid + '/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp';
     $.ajax({
@@ -129,11 +109,7 @@ $(topTen).on('click', 'a', function () {
             var titleValue = data.results.name;
             var descValue = data.results.deck ? data.results.deck : "Sorry, no Giant Bomb users have written a description for " + titleValue + " yet!";
             var genreValue = data.results.genres ? data.results.genres[0].name : "Sorry, a genre for " + titleValue + ", is not listed.";
-<<<<<<< HEAD
             var ratingValue = data.results.original_game_rating ? data.results.original_game_rating[0].name : titleValue + " rating not available";
-=======
-            var ratingValue = data.results.original_game_rating ? data.results.original_game_rating[0].name : "Sorry, no Giant Bomb users have rated " + titleValue + " yet!";
->>>>>>> 42fdd30633d8731adac05b34150f52c0b672b5f4
             var bombValue = data.results.site_detail_url;
             var imageURL = data.results.image.medium_url;
             $('#photoBox').empty()
@@ -204,11 +180,6 @@ $(topTen).on('click', 'a', function () {
         $("a.active").removeClass("active");
         $(this).addClass("active");
     }
-<<<<<<< HEAD
-=======
-        
-
->>>>>>> 42fdd30633d8731adac05b34150f52c0b672b5f4
 })
 
 var genreGame = 'strategy';
