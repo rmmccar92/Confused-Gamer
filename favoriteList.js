@@ -14,7 +14,6 @@ function pageLoad() {
     }
      else if (localStorage.getItem("count") !=0){
          (!$(this).addClass("active"));
-         console.log("it worked ya dingus");
      }
 
 };
@@ -71,9 +70,8 @@ function topTenAppend() {
         var gameEl = "#game" + [i + 1]
         topTen.append("<a href='#!'class='collection-item black darken-1 right-list' data-index='" + [i] + "' id = 'game" + [i + 1] + "'data-guid='" + data.results[i].guid + "'>" + data.results[i].name + "</a>")
         var gameBtn = "<a class='btn-floating btn-small waves-effect waves-light deep-purple accent-3 game-" + [i + 1] + "-button list-button'><i class='material-icons'>add</i></a>"
-        $(gameEl).append(gameBtn)
-
-
+        $(gameEl).append(gameBtn);
+        $("#game1").addClass("active");
     }
 
 }
