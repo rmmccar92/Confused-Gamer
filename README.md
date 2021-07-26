@@ -39,7 +39,7 @@ As a user, I want a list of free to play games to populate.
 
 As a user, I want to click on a link that will redirect me to that free game and play it immediately. 
 
-![Image 1 of application:]()
-![Image 2 of application:]()
-![Image 3 of application:]()
-![Image 4 of application:]()
+![Image 1 of application:](https://github.com/rmmccar92/Confused-Gamer/blob/69aab4c032c1bc98625c44b090ae68a3d8c2bdf2/assets/images/Screenshot%201%20-%20Homepage.png)
+![Image 2 of application:](https://github.com/rmmccar92/Confused-Gamer/blob/69aab4c032c1bc98625c44b090ae68a3d8c2bdf2/assets/images/Screenshot%202%20-%20On%20Load.png)
+![Image 3 of application:](https://github.com/rmmccar92/Confused-Gamer/blob/69aab4c032c1bc98625c44b090ae68a3d8c2bdf2/assets/images/Screenshot%203%20-%20Different%20Selection.png)
+![Image 4 of application:](https://github.com/rmmccar92/Confused-Gamer/blob/69aab4c032c1bc98625c44b090ae68a3d8c2bdf2/assets/images/Screenshot%204%20-%20Favorited%20Games.png)
