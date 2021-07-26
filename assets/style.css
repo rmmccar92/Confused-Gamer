@@ -16,6 +16,14 @@
     background-color: var(--background)
 }
 
+.slideText {
+    text-shadow:-2px -2px #000; 
+}
+
+.slideText2 {
+    text-shadow:-1px -1px #FFF; 
+}
+}
 .navLinks {
     font-size: 20px;
     color: var(--border)
@@ -60,6 +68,9 @@ tbody {
 /* this class is for the color of the buttons - we can change them to anything we want */
 .collection a.collection-item {
     color: var(--border);
+}
+.active {
+    color: #FFF;
 }
 .wrapper{
     margin-left: 5px;

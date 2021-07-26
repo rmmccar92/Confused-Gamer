@@ -11,7 +11,12 @@ pageLoad();
 function pageLoad() {
     if (localStorage.getItem("count") != null) {
         listCount = localStorage.getItem("count")
+        
     }
+     else if (localStorage.getItem("count") !=0){
+         (!$(this).addClass("active"));
+         console.log("it worked ya dingus");
+     }
 
 };
 
@@ -19,12 +24,8 @@ firstListItem()
 function firstListItem() {
     data = JSON.parse(localStorage.getItem('data'));
     var guid3 = data.results[0].guid
-
-    if (!$(this).hasClass("active")) {
-        $("a.active").removeClass("active");
-        $(this).addClass("active");
-    } 
-
+    
+     
     // api call for title, genre, and description
     var singleGameAPI = 'https://www.giantbomb.com/api/game/' + guid3 + '/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp';
     $.ajax({
@@ -37,7 +38,7 @@ function firstListItem() {
 
         .then((data) => {
             var titleValue = data.results.name;
-            var descValue = data.results.deck;
+            var descValue = data.results.deck ? data.results.deck : "Sorry, no Giant Bomb users have written a description for " + titleValue + " yet!";
             var genreValue = data.results.genres ? data.results.genres[0].name : "Sorry, a genre for " + titleValue + ", is not listed.";
             var ratingValue = data.results.original_game_rating ? data.results.original_game_rating[0].name : "Sorry, no Giant Bomb users have rated " + titleValue + " yet!";
             var bombValue = data.results.site_detail_url;
@@ -75,7 +76,9 @@ function topTenAppend() {
         var gameBtn = "<a class='btn-floating btn-small waves-effect waves-light deep-purple accent-3 game-" + [i + 1] + "-button list-button'><i class='material-icons'>add</i></a>"
         $(gameEl).append(gameBtn)
 
+
     }
+
 }
 
 $(topTen).on('click', '.btn-small', function () {
@@ -177,10 +180,13 @@ for (i = 0; i < localStorageCount; i++) {
 // color change of active tab 
 $(topTen).on('click', 'a', function () {
 
+
     if (!$(this).hasClass("active")) {
         $("a.active").removeClass("active");
         $(this).addClass("active");
-    }   
+    }
+        
+
 })
 
 var genreGame = 'strategy';
