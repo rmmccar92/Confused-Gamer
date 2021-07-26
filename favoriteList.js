@@ -128,7 +128,7 @@ $(topTen).on('click', 'a', function () {
             gameDesc.innerHTML = descValue;
             gameGenre.innerHTML = "Genre: " + genreValue;
             gameRating.innerHTML = "Rating: " + ratingValue;
-            bombSite.innerHTML = `<a href=${bombValue} target="_blank">click here!</a>`;
+            bombSite.innerHTML = `<a style="color: #4ddb4f" href=${bombValue} target="_blank">click here!</a>`;
         })
 
 })
