@@ -148,7 +148,7 @@ $(savedListEl).on('click', 'a', function () {
             var titleValue = data.results.name;
             var descValue = data.results.deck ? data.results.deck : "Sorry, no Giant Bomb users have written a description for " + titleValue + " yet!";
             var genreValue = data.results.genres ? data.results.genres[0].name : "Sorry, a genre for " + titleValue + ", is not listed.";
-            var ratingValue = data.results.original_game_rating ? data.results.original_game_rating[0].name : "Sorry, no Giant Bomb users have reviewed " + titleValue + " yet!";
+            var ratingValue = data.results.original_game_rating ? data.results.original_game_rating[0].name : titleValue + " rating not available";
             var bombValue = data.results.site_detail_url;
             var imageURL = data.results.image.medium_url;
             $('#photoBox').empty()
