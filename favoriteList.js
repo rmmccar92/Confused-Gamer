@@ -24,7 +24,6 @@ function firstListItem() {
     data = JSON.parse(localStorage.getItem('data'));
     var guid3 = data.results[0].guid
 
-
     // api call for title, genre, and description
     var singleGameAPI = 'https://www.giantbomb.com/api/game/' + guid3 + '/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp';
     $.ajax({
@@ -39,7 +38,7 @@ function firstListItem() {
             var titleValue = data.results.name;
             var descValue = data.results.deck ? data.results.deck : "Sorry, no Giant Bomb users have written a description for " + titleValue + " yet!";
             var genreValue = data.results.genres ? data.results.genres[0].name : "Sorry, a genre for " + titleValue + ", is not listed.";
-            var ratingValue = data.results.original_game_rating ? data.results.original_game_rating[0].name : "Sorry, no Giant Bomb users have rated " + titleValue + " yet!";
+            var ratingValue = data.results.original_game_rating ? data.results.original_game_rating[0].name : titleValue + " rating not available";
             var bombValue = data.results.site_detail_url;
             var imageURL = data.results.image.medium_url;
             $('#photoBox').empty()
