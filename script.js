@@ -71,3 +71,23 @@ searchButton.on('click', function () {
       location.assign("results.html")
     });
 })
+
+$("#form1").on('submit', function(){
+    event.preventDefault();
+    var searchItem = searchInput.val();
+  var APISearchUrl = 'https://www.giantbomb.com/api/search/?api_key=073c2f94ba69540e99d2b7e8b4cd3aebb2d9befb&format=jsonp&query=' + searchItem + '&limit=10&resources=game'
+
+  $.ajax({
+    type: 'GET',
+    dataType: 'jsonp',
+    crossDomain: true,
+    jsonp: 'json_callback',
+    url: APISearchUrl
+  })
+    .then(function (data2) {
+      localStorage.setItem('data', JSON.stringify(data2));
+    })
+    .then(function () {
+      location.assign("results.html")
+    });
+})
