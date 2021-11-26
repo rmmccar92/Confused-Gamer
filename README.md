@@ -44,5 +44,6 @@ As a user, I want to click on a link that will redirect me to that free game and
 ![Image 3 of application:](https://github.com/rmmccar92/Confused-Gamer/blob/69aab4c032c1bc98625c44b090ae68a3d8c2bdf2/assets/images/Screenshot%203%20-%20Different%20Selection.png)
 
 #Links
-[Repo Link](https://github.com/rmmccar92/Confused-Gamer)
-[Deployment Link](https://rmmccar92.github.io/Confused-Gamer/)
+- [Repo Link](https://github.com/rmmccar92/Confused-Gamer)
+
+- [Deployment Link](https://rmmccar92.github.io/Confused-Gamer/)
